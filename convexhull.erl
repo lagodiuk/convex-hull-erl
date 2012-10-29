@@ -1,10 +1,8 @@
 -module(convexhull).
 -compile(export_all).
 
--record(point, {x, y}).
--record(vector, {x, y}).
-
--define(BASE, #point{x=0, y=0}).
+-include("point.hrl").
+-include("vector.hrl").
 
 distance(#point{x=X1, y=Y1}, #point{x=X2, y=Y2}) ->
 	math:sqrt(sqr(X2-X1) + sqr(Y2-Y1)).	
@@ -12,8 +10,8 @@ distance(#point{x=X1, y=Y1}, #point{x=X2, y=Y2}) ->
 sqr(X) ->
 	X*X.
 
-move(P = #point{x=X, y=Y}, Dx, Dy) ->
-	P#point{x=(X+Dx), y=(Y+Dy)}.
+move(#point{x=X, y=Y}, Dx, Dy) ->
+	#point{x=(X+Dx), y=(Y+Dy)}.
 
 vector_from_points(#point{x=X1, y=Y1}, #point{x=X2, y=Y2}) ->
 	#vector{x=(X2-X1), y=(Y2-Y1)}.

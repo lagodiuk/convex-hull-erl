@@ -1,0 +1,2 @@
+-record(point, {x, y}).
+-define(BASE, #point{x=0, y=0}).

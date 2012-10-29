@@ -1,0 +1,1 @@
+-record(vector, {x, y}).

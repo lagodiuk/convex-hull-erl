@@ -22,14 +22,8 @@ Example, from from erlang-shell:
 5> 
 5> Point = fun(X, Y) -> #point{x=X, y=Y} end.
 #Fun<erl_eval.12.82930912>
-6> 
-6> Points = [Point(0,0), Point(1,1), Point(2,0), Point(1,2)].
-[#point{x = 0,y = 0},
- #point{x = 1,y = 1},
- #point{x = 2,y = 0},
- #point{x = 1,y = 2}]
-7> 
-7> ConvexHull = convexhull:build(Points).
+6>  
+6> ConvexHull = convexhull:build([Point(0,0), Point(1,1), Point(2,0), Point(1,2)]).
 [#point{x = 1,y = 2},
  #point{x = 2,y = 0},
  #point{x = 0,y = 0}]

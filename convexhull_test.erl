@@ -2,7 +2,6 @@
 -compile(export_all).
 
 -include_lib("eunit/include/eunit.hrl").
--include("point.hrl").
 
 triangle_test() ->
 	Input = [point(0,0), point(1,2), point(2,0), point(1,1)],
@@ -17,4 +16,4 @@ pentagon_test() ->
 	?assertMatch(Expected, Actual).
 
 point(X, Y) ->
-	#point{x=X, y=Y}.
+	point:new(X, Y).
